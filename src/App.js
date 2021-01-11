@@ -1,11 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import { Titlebar, Nominees, Search, Results } from './components'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Titlebar />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <Nominees />
+        <Search />
+        <Results />
         <p>
           Edit <code>src/App.js</code> and save to reload.
           GREAT
