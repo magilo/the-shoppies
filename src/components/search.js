@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { SearchBox } from './index'
 
 class Search extends Component {
   render() {
     return (
-      <h4>search box here</h4>
+      <div>
+        <SearchBox />
+      </div>
+
     )
   }
 }
