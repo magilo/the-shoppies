@@ -7,4 +7,5 @@
 export { default as Titlebar } from './titlebar'
 export { default as Nominees } from './nominees'
 export { default as Search } from './search'
+export { default as SearchBox } from './searchbox'
 export { default as Results } from './results'
