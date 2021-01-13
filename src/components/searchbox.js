@@ -28,7 +28,6 @@ class SearchBox extends Component {
 
   render() {
     return (
-      <div>
 
         <div className="form">
           <form onSubmit={this.handleSearchSubmit}>
@@ -50,7 +49,6 @@ class SearchBox extends Component {
             </div>
           </form>
         </div>
-      </div>
     )
   }
 }
