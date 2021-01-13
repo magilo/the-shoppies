@@ -1,11 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react'
+//stateless component
 
-class Nominees extends Component {
-  render() {
-    return (
-      <h4>nominees go here</h4>
-    )
-  }
+function Nominees(){
+  return (
+    <h4>nominees go here</h4>
+  )
 }
 
-export default Nominees;
+export default Nominees
+
+
+// import React, { Component } from 'react';
+
+// class Nominees extends Component {
+//   render() {
+//     return (
+//       <h4>nominees go here</h4>
+//     )
+//   }
+// }
+
+// export default Nominees;
