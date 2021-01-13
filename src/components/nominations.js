@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nominees, Search, Results } from './index'
+import { Nominees, Search, Results, getSearchResults } from './index'
 
 /*
 top level component
@@ -25,6 +25,12 @@ class Nominations extends Component {
     currNominees.push(childData)
     this.setState({ nominees: currNominees })
   }
+
+  componentDidMount() {
+    getSearchResults('batman')
+  }
+
+
 
   render() {
     const { title, results } = this.state

@@ -1,5 +1,5 @@
 import axios from 'axios'
-const { APIToken } = require('../../secrets')
+const { APIToken } = require('../secrets')
 
 export const getSearchResults = async (title) => {
   try {
@@ -11,7 +11,9 @@ export const getSearchResults = async (title) => {
   }
 }
 
-/* 
+
+
+/*
 http://www.omdbapi.com/?apikey=[yourkey]&
 http://www.omdbapi.com/?apikey=[your-apikey]&s=batman
 
