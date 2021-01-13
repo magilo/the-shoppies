@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Titlebar, Nominees, Search, Results } from './components'
+import { Titlebar, Nominations } from './components'
 
 function App() {
   return (
@@ -8,9 +8,7 @@ function App() {
       <header className="App-header">
         <Titlebar />
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Nominees />
-        <Search />
-        <Results />
+        <Nominations />
         <p>
           Edit <code>src/App.js</code> and save to reload.
           GREAT
