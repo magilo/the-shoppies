@@ -5,16 +5,13 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      testPass: this.props.myTitle
+      title: ""
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
   }
 
-  onTrigger = (event) => {
-    this.props.parentCallback("Data from child")
-    event.preventDefault()
-  }
+
 
   handleChange(event) {
     this.setState({
@@ -32,16 +29,10 @@ class Search extends Component {
   }
 
   render() {
-    const { testPass } = this.state
-    console.log('render this.props', this.props)
+    
     return (
 
       <div>
-        <div>
-          <form onSubmit={this.onTrigger}>
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
 
         <div className="form">
           <form onSubmit={this.handleSearchSubmit}>

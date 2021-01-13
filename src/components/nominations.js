@@ -9,30 +9,31 @@ class Nominations extends Component {
     super(props)
     this.state = {
       title: "",
-      testPass: "hello",
+      results: "",
+      nominees: "",
       data: ""
     }
   }
 
-  handleCallback = (childData) => {
-    this.setState({ data: childData })
-  }
 
   handleSearchSubmitCB = (childData) => {
     this.setState({ title: childData })
   }
 
+  handleResultSubmitCB = (childData) => {
+    let currNominees = this.state.nominees.slice()
+    currNominees.push(childData)
+    this.setState({ nominees: currNominees })
+  }
+
   render() {
-    const { title, testPass, data } = this.state
+    const { title, results } = this.state
     return (
       <div>
         <Nominees />
-        <h3>data: {data}</h3>
-        <Search myTitle={testPass}
-          parentCallback={this.handleCallback}
-          searchSubmitCB={this.handleSearchSubmitCB} />
-        <h3>selectedTitle: {title}</h3>
-        <Results />
+        <Search searchSubmitCB={this.handleSearchSubmitCB} />
+        {/* <h3>selectedTitle: {title}</h3> */}
+        <Results searchResults={title} />
       </div>
 
     )
