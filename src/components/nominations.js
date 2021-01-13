@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Nominees, Search, Results, getSearchResults } from './index'
-import axios from 'axios'
-const { APIToken } = require('../secrets')
+// import axios from 'axios'
+// const { APIToken } = require('../secrets')
 
 /*
 top level component
@@ -27,7 +27,6 @@ class Nominations extends Component {
       //console.log('state inside', this.state)
     }
     wrapper()
-    //console.log('test', test)
     //console.log('state', this.state)
     this.setState({ title: childData })
   }
@@ -39,17 +38,12 @@ class Nominations extends Component {
     this.setState({ nominees: currNominees })
   }
 
-
-
-
-
   render() {
     const { title, results } = this.state
     return (
       <div>
         <Nominees />
         <Search searchSubmitCB={this.handleSearchSubmitCB} />
-        {/* <h3>selectedTitle: {title}</h3> */}
         <Results searchResults={results} searchTitle={title} />
       </div>
 

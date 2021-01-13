@@ -20,7 +20,7 @@ class Results extends Component {
   }
 
   render() {
-    console.log('render this.props', this.props)
+    console.log('render in results', this.props)
     //console.log('results state', this.state)
     const allResults = this.state.results //array
     const title = this.state.title
@@ -41,9 +41,6 @@ class Results extends Component {
         <h4>enter title in search</h4>
       )
     }
-    // console.log('allResults', Array.isArray(allResults), typeof allResults)
-
-
   }
 }
 
