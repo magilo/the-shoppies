@@ -21,6 +21,8 @@ class Search extends Component {
 
   handleSearchSubmit(event) {
     //alert('A title was submitted: ' + this.state.title);
+
+
     this.props.searchSubmitCB(this.state.title)
     event.preventDefault()
     this.setState({
@@ -29,7 +31,7 @@ class Search extends Component {
   }
 
   render() {
-    
+
     return (
 
       <div>

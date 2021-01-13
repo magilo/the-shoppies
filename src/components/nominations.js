@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Nominees, Search, Results, getSearchResults } from './index'
+import axios from 'axios'
+const { APIToken } = require('../secrets')
 
 /*
 top level component
@@ -13,12 +15,24 @@ class Nominations extends Component {
       nominees: "",
       data: ""
     }
+    this.handleSearchSubmitCB = this.handleSearchSubmitCB.bind(this)
   }
 
 
   handleSearchSubmitCB = (childData) => {
+    const wrapper = async () => {
+      const abc = await getSearchResults(childData)
+      console.log('abc', abc.Search)
+
+      this.setState({ results: abc.Search })
+      console.log('state inside', this.state)
+    }
+    wrapper()
+    //console.log('test', test)
+    console.log('state', this.state)
     this.setState({ title: childData })
   }
+
 
   handleResultSubmitCB = (childData) => {
     let currNominees = this.state.nominees.slice()
@@ -26,9 +40,7 @@ class Nominations extends Component {
     this.setState({ nominees: currNominees })
   }
 
-  componentDidMount() {
-    getSearchResults('batman')
-  }
+
 
 
 
@@ -39,7 +51,7 @@ class Nominations extends Component {
         <Nominees />
         <Search searchSubmitCB={this.handleSearchSubmitCB} />
         {/* <h3>selectedTitle: {title}</h3> */}
-        <Results searchResults={title} />
+        <Results searchResults={results} />
       </div>
 
     )
