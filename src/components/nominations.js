@@ -21,15 +21,14 @@ class Nominations extends Component {
 
   handleSearchSubmitCB = (childData) => {
     const wrapper = async () => {
-      const abc = await getSearchResults(childData)
-      console.log('abc', abc.Search)
+      const apiData = await getSearchResults(childData)
 
-      this.setState({ results: abc.Search })
-      console.log('state inside', this.state)
+      this.setState({ results: apiData.Search })
+      //console.log('state inside', this.state)
     }
     wrapper()
     //console.log('test', test)
-    console.log('state', this.state)
+    //console.log('state', this.state)
     this.setState({ title: childData })
   }
 
@@ -51,7 +50,7 @@ class Nominations extends Component {
         <Nominees />
         <Search searchSubmitCB={this.handleSearchSubmitCB} />
         {/* <h3>selectedTitle: {title}</h3> */}
-        <Results searchResults={results} />
+        <Results searchResults={results} searchTitle={title} />
       </div>
 
     )
