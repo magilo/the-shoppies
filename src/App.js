@@ -11,7 +11,7 @@ function App() {
         <Nominations />
         <p>
           Edit <code>src/App.js</code> and save to reload.
-          GREAT
+          NEW TEST
         </p>
         <a
           className="App-link"
