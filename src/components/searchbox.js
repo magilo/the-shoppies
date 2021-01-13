@@ -19,6 +19,7 @@ class SearchBox extends Component {
   }
 
   handleSearchSubmit(event) {
+    alert('A title was submitted: ' + this.state.title);
     event.preventDefault()
     this.setState({
       title: ""
@@ -26,10 +27,9 @@ class SearchBox extends Component {
   }
 
   render() {
-    const currtitle = this.state.title
     return (
       <div>
-        <h3>title: {currtitle}</h3>
+
         <div className="form">
           <form onSubmit={this.handleSearchSubmit}>
             <div>

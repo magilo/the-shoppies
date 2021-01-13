@@ -4,6 +4,7 @@
  * having to figure out which file they belong to!
  */
 
+export { default as Nominations } from './nominations'
 export { default as Titlebar } from './titlebar'
 export { default as Nominees } from './nominees'
 export { default as Search } from './search'
