@@ -32,26 +32,23 @@ class Search extends Component {
 
     return (
 
-      <div>
+      <div className="search-bar">
 
         <div className="form">
           <form onSubmit={this.handleSearchSubmit}>
-            <div>
-              <input
-                name="title"
-                type="text"
-                value={this.state.title}
-                placeholder="e.g. Rambo"
-                onChange={this.handleChange}
-              />
-            </div>
 
-            <div>
-              <button type="submit" onSubmit={this.handleSearchSubmit}>
-                {' '}
+            <input
+              name="title"
+              type="text"
+              value={this.state.title}
+              placeholder="e.g. Rambo"
+              onChange={this.handleChange}
+            />
+            <button type="submit" onSubmit={this.handleSearchSubmit}>
+              {' '}
                 submit{' '}
-              </button>
-            </div>
+            </button>
+
           </form>
         </div>
 

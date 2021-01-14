@@ -13,15 +13,51 @@
   }
 }
 
-.App-header {
+.App-body {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 45vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+h5 {
+  display: block;
+  font-size: 0.83em;
+  margin-block-start: .75em;
+  margin-block-end: .75em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.App-section {
+  background-color: #282c34;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.search-bar{
+  flex-direction: row;
 }
 
 .App-link {
