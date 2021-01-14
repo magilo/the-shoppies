@@ -73,18 +73,24 @@ class Nominations extends Component {
     let isDone = (nominees.length === 5) ? true : false
 
     return (
-      <div>
-        <Nominees
-          currNominees={nominees}
-          deleteNomineeCB={this.handleDeleteNomineeCB} />
-        <Done isDone={isDone} />
-        <Search searchSubmitCB={this.handleSearchSubmitCB} />
-        <Results
-          searchResults={results}
-          searchTitle={title}
-          currNominees={nominees}
-          searchError={searchError}
-          resultSubmitCB={this.handleResultSubmitCB} />
+      <div className="App-section">
+        <div className="nominees">
+          <Nominees
+            currNominees={nominees}
+            deleteNomineeCB={this.handleDeleteNomineeCB} />
+          <Done isDone={isDone} />
+        </div>
+        <div className="search-bar">
+          <Search searchSubmitCB={this.handleSearchSubmitCB} />
+        </div>
+        <div className="results">
+          <Results
+            searchResults={results}
+            searchTitle={title}
+            currNominees={nominees}
+            searchError={searchError}
+            resultSubmitCB={this.handleResultSubmitCB} />
+        </div>
       </div>
 
     )

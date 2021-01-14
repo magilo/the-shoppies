@@ -11,14 +11,16 @@ function App() {
         <section className="App-section">
           <Nominations />
         </section>
-        <a
-          className="App-link"
-          href="https://github.com/magilo/the-shoppies"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          github
+        <footer>
+          <a
+            className="App-link"
+            href="https://github.com/magilo/the-shoppies"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github
         </a>
+        </footer>
       </body>
     </div>
   );
