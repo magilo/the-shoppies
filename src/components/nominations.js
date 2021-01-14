@@ -23,7 +23,7 @@ class Nominations extends Component {
   handleSearchSubmitCB = (childData) => {
     const wrapper = async () => {
       const apiData = await getSearchResults(childData)
-      console.log('apiData', apiData)
+      //console.log('apiData', apiData)
       if (apiData.Response === 'False') {
         this.setState({
           results: "",
@@ -41,16 +41,16 @@ class Nominations extends Component {
   }
 
 
-  handleResultSubmitCB = (childData) => {
+  handleResultSubmitCB = (childNominee) => {
     this.setState({ nominees: this.state.nominees }, function () {
       let nomineesLen = this.state.nominees.length
       if (nomineesLen === 0) {
-        this.setState({ nominees: [...this.state.nominees, childData] }, () => {
-          console.log('nominees === 0', this.state.nominees);
+        this.setState({ nominees: [...this.state.nominees, childNominee] }, () => {
+          //console.log('nominees === 0', this.state.nominees);
         });
       } else if (nomineesLen > 0 && nomineesLen < 5) {
-        this.setState({ nominees: [...this.state.nominees, childData] }, () => {
-          console.log('nomi <= 5', this.state.nominees)
+        this.setState({ nominees: [...this.state.nominees, childNominee] }, () => {
+          //console.log('nomi <= 5', this.state.nominees)
         });
       } else {
         alert('you have already selected five(5) nominees');
@@ -58,10 +58,10 @@ class Nominations extends Component {
     });
   }
 
-  handleDeleteNomineeCB = (imdbID) => {
+  handleDeleteNomineeCB = (childID) => {
     //console.log('delete n childData', childData)
     //console.log('this.state.nominees', this.state.nominees)
-    const newList = this.state.nominees.filter((item) => item.imdbID !== imdbID)
+    const newList = this.state.nominees.filter((item) => item.imdbID !== childID)
     this.setState({ nominees: newList })
   }
 
@@ -70,12 +70,7 @@ class Nominations extends Component {
 
   render() {
     const { title, results, nominees, searchError } = this.state
-    let isDone = false
-    if (nominees.length === 5) {
-      isDone = true
-    } else {
-      isDone = false
-    }
+    let isDone = (nominees.length === 5) ? true : false
 
     return (
       <div>
