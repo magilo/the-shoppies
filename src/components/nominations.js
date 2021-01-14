@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nominees, Search, Results, getSearchResults } from './index'
+import { Nominees, Search, Results, Done, getSearchResults } from './index'
 
 /*
 top level component
@@ -53,7 +53,7 @@ class Nominations extends Component {
           console.log('nomi <= 5', this.state.nominees)
         });
       } else {
-        alert('you have already selected 5 nominees');
+        alert('you have already selected five(5) nominees');
       }
     });
   }
@@ -70,11 +70,19 @@ class Nominations extends Component {
 
   render() {
     const { title, results, nominees, searchError } = this.state
+    let isDone = false
+    if (nominees.length === 5) {
+      isDone = true
+    } else {
+      isDone = false
+    }
+
     return (
       <div>
         <Nominees
           currNominees={nominees}
           deleteNomineeCB={this.handleDeleteNomineeCB} />
+        <Done isDone={isDone} />
         <Search searchSubmitCB={this.handleSearchSubmitCB} />
         <Results
           searchResults={results}
