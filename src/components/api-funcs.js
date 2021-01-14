@@ -5,7 +5,7 @@ export const getSearchResults = async (title) => {
   try {
     const { data } = await axios.get(
       `http://www.omdbapi.com/?apikey=${APIToken}&s=${title}`)
-    console.log('axios', data)
+    //console.log('axios', data)
     return data
   } catch (err) {
     console.error(err)
