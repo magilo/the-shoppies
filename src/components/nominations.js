@@ -16,6 +16,7 @@ class Nominations extends Component {
     }
     this.handleSearchSubmitCB = this.handleSearchSubmitCB.bind(this)
     this.handleResultSubmitCB = this.handleResultSubmitCB.bind(this)
+    this.handleDeleteNomineeCB = this.handleDeleteNomineeCB.bind(this)
   }
 
 
@@ -57,7 +58,9 @@ class Nominations extends Component {
     });
   }
 
-
+  handleDeleteNomineeCB = (childData) => {
+    console.log('delete n childData', childData)
+  }
 
 
 
@@ -66,7 +69,9 @@ class Nominations extends Component {
     const { title, results, nominees, searchError } = this.state
     return (
       <div>
-        <Nominees currNominees={nominees} />
+        <Nominees
+          currNominees={nominees}
+          deleteNomineeCB={this.handleDeleteNomineeCB} />
         <Search searchSubmitCB={this.handleSearchSubmitCB} />
         <Results
           searchResults={results}

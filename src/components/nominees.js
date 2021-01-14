@@ -18,7 +18,15 @@ class Nominees extends Component {
     this.state = {
       nominees: this.props.currNominees,
     }
+    this.handleDeleteNominee = this.handleDeleteNominee.bind(this)
   }
+
+  handleDeleteNominee(event) {
+    alert(event.target.value)
+    event.preventDefault()
+    this.props.deleteNomineeCB(event.target.value)
+  }
+
 
   componentDidUpdate(prevProps) {
     if (this.props.currNominees.length !== prevProps.currNominees.length) {
@@ -34,7 +42,11 @@ class Nominees extends Component {
       const listItems = nominees.map((n) =>
         <li key={n.imdbID}>
           {n.Title}({n.Year})
-
+          <button
+            value={n.imdbID}
+            onClick={this.handleDeleteNominee}>
+            x
+        </button>
         </li>
       );
       return (
