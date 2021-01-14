@@ -58,8 +58,11 @@ class Nominations extends Component {
     });
   }
 
-  handleDeleteNomineeCB = (childData) => {
-    console.log('delete n childData', childData)
+  handleDeleteNomineeCB = (imdbID) => {
+    //console.log('delete n childData', childData)
+    //console.log('this.state.nominees', this.state.nominees)
+    const newList = this.state.nominees.filter((item) => item.imdbID !== imdbID)
+    this.setState({ nominees: newList })
   }
 
 
