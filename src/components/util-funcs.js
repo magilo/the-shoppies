@@ -6,7 +6,6 @@ export const movieExists = (imdbID, list) => {
       return true
     }
   }
-
   return false
 }
 

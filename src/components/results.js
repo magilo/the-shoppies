@@ -43,12 +43,9 @@ class Results extends Component {
   render() {
     console.log('render in results', this.props)
     const { title, nominees } = this.state
-    //console.log('results state', this.state)
     const allResults = this.state.results //array
-    // const title = this.state.title
-    // const nominees = this.state.nominees
     const error = this.state.error
-    //console.log('results error', error)
+
     if (Array.isArray(allResults)) {
       const listItems = allResults.map((res) =>
         <li key={res.imdbID}>

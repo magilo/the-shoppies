@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Nominees, Search, Results, getSearchResults } from './index'
-// import axios from 'axios'
-// const { APIToken } = require('../secrets')
+import { Nominees, Search, Results, Done, getSearchResults } from './index'
 
 /*
 top level component
@@ -18,6 +16,7 @@ class Nominations extends Component {
     }
     this.handleSearchSubmitCB = this.handleSearchSubmitCB.bind(this)
     this.handleResultSubmitCB = this.handleResultSubmitCB.bind(this)
+    this.handleDeleteNomineeCB = this.handleDeleteNomineeCB.bind(this)
   }
 
 
@@ -36,49 +35,54 @@ class Nominations extends Component {
           searchError: ""
         })
       }
-
-      //console.log('state inside', this.state)
-      //fix false responses
     }
     wrapper()
-    //console.log('state', this.state)
     this.setState({ title: childData })
   }
 
 
   handleResultSubmitCB = (childData) => {
-    // let currNominees = this.state.nominees.slice()
-    // currNominees.push(childData)
-    // this.setState({ nominees: currNominees })
     this.setState({ nominees: this.state.nominees }, function () {
       let nomineesLen = this.state.nominees.length
       if (nomineesLen === 0) {
         this.setState({ nominees: [...this.state.nominees, childData] }, () => {
           console.log('nominees === 0', this.state.nominees);
         });
-
       } else if (nomineesLen > 0 && nomineesLen < 5) {
         this.setState({ nominees: [...this.state.nominees, childData] }, () => {
           console.log('nomi <= 5', this.state.nominees)
         });
-        //this.setState({ nominees: [...this.state.nominees, childData] })
-
       } else {
-        alert('you have already selected 5 nominees');
+        alert('you have already selected five(5) nominees');
       }
     });
   }
 
-
+  handleDeleteNomineeCB = (imdbID) => {
+    //console.log('delete n childData', childData)
+    //console.log('this.state.nominees', this.state.nominees)
+    const newList = this.state.nominees.filter((item) => item.imdbID !== imdbID)
+    this.setState({ nominees: newList })
+  }
 
 
 
 
   render() {
     const { title, results, nominees, searchError } = this.state
+    let isDone = false
+    if (nominees.length === 5) {
+      isDone = true
+    } else {
+      isDone = false
+    }
+
     return (
       <div>
-        <Nominees />
+        <Nominees
+          currNominees={nominees}
+          deleteNomineeCB={this.handleDeleteNomineeCB} />
+        <Done isDone={isDone} />
         <Search searchSubmitCB={this.handleSearchSubmitCB} />
         <Results
           searchResults={results}
