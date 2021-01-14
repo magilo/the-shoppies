@@ -19,7 +19,7 @@ class Nominations extends Component {
     this.handleDeleteNomineeCB = this.handleDeleteNomineeCB.bind(this)
   }
 
-
+  //getSearchResults is an async func, need wrapper to get promise
   handleSearchSubmitCB = (childData) => {
     const wrapper = async () => {
       const apiData = await getSearchResults(childData)
@@ -40,7 +40,7 @@ class Nominations extends Component {
     this.setState({ title: childData })
   }
 
-
+  //setState is an async func - setState(updater, [callback])
   handleResultSubmitCB = (childNominee) => {
     this.setState({ nominees: this.state.nominees }, function () {
       let nomineesLen = this.state.nominees.length
