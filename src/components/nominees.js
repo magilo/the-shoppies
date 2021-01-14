@@ -21,13 +21,13 @@ class Nominees extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.nominees.length !== prevProps.nominees.length) {
-      this.setState({
-        nominees: this.props.nominees,
-      })
-    }
+    // if (this.props.nominees.length !== prevProps.nominees.length) {
+    //   this.setState({
+    //     nominees: this.props.nominees,
+    //   })
+    // }
   }
-  
+
   render() {
     const nomi = this.state.nominees
     return (
