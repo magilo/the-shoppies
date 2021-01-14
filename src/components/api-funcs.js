@@ -4,7 +4,7 @@ const { APIToken } = require('../secrets')
 export const getSearchResults = async (title) => {
   try {
     const { data } = await axios.get(
-      `http://www.omdbapi.com/?apikey=${APIToken}&s=${title}`)
+      `http://www.omdbapi.com/?apikey=${APIToken}&s=${title}&type=movie`)
     //console.log('axios', data)
     return data
   } catch (err) {
