@@ -42,7 +42,7 @@ class Search extends Component {
             name="title"
             type="text"
             value={this.state.title}
-            placeholder="e.g. Rambo"
+            placeholder="e.g. pirates"
             onChange={this.handleChange}
           />
           <button

@@ -29,18 +29,21 @@ class Nominees extends Component {
     //console.log('nominees render', nominees)
     if (Array.isArray(nominees) && nominees.length > 0) {
       const listItems = nominees.map((n) =>
-        <li key={n.imdbID}>
-          {n.Title}({n.Year})
+        <div className="movie" key={n.imdbID}>
+          <img id="poster" src={n.Poster} alt={n.imdbID} />
+          <span className="movie">{n.Title} ({n.Year})</span>
           <button
+            id="poster"
+            type="remove"
             value={n.imdbID}
             onClick={this.handleDeleteNominee}>
             x
         </button>
-        </li>
+        </div>
       );
       return (
-        <div>
-          <ul>{listItems}</ul>
+        <div className="nominee-list">
+          {listItems}
         </div>
       );
     }
@@ -56,3 +59,12 @@ class Nominees extends Component {
 }
 
 export default Nominees;
+
+/*
+each nominee object
+Poster: "https://m.media-amazon.com/images/M/MV5BMTI5Mjg1MzM4NF5BMl5BanBnXkFtZTcwNTAyNzUzMw@@._V1_SX300.jpg"
+Title: "Rambo"
+Type: "movie"
+Year: "2008"
+imdbID: "tt0462499"
+*/

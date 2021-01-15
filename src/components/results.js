@@ -48,20 +48,20 @@ class Results extends Component {
 
     if (Array.isArray(allResults)) {
       const listItems = allResults.map((res) =>
-        <li key={res.imdbID}>
-          {res.Title}({res.Year})
+        <p key={res.imdbID}>
+          {res.Title} ({res.Year})---
           <button
             value={res.Title}
             disabled={movieExists(res.imdbID, nominees)}
             onClick={this.handleResultSubmit.bind(this, res)}>
             nominate
         </button>
-        </li>
+        </p>
       );
       return (
         <div>
-          <p>showing results for "{title}"</p>
-          <ul>{listItems}</ul>
+          <h4>showing results for "{title}"</h4>
+          <div id="results-list">{listItems}</div>
         </div>
       );
     } else if (error.length !== 0) {
