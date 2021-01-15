@@ -49,7 +49,7 @@ class Nominees extends Component {
     }
     else {
       return (
-        <div></div>
+        <div className="nominee-list"></div>
       )
       // <h4>nominees go here</h4>
 
