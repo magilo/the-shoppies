@@ -133,17 +133,32 @@ input{
 
 footer{
   min-height: 8vh;
+
 }
 
 .App-link {
   font-size: calc(6px + 2vmin);
-  color: #61dafb;
+  /* color: #61dafb; */
+  background-image: linear-gradient(to left,
+   #ffe600, #55efff, #ff71de, #ffe600,  #55efff, #ff71de
+  );
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
 }
 
 #done{
   color: #282c34;
   background: rgb(255, 255, 255);
   margin-top:auto;
+  /* background-image: linear-gradient(to left,
+    #ffe600, #ff71de, #55efff, #ffe600, #ff71de, #55efff
+  );
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent; */
 }
 
 #poster{

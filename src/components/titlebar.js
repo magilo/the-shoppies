@@ -1,5 +1,5 @@
 import React from 'react'
-import shoppieslogo from '../assets/shoppies-logo-474x139.png';
+import shoppieslogo from '../assets/shoppies-logo.png';
 
 //stateless component
 const Titlebar = () => (
