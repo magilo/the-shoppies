@@ -5,7 +5,8 @@ import shoppieslogo from '../assets/shoppies-logo-474x139.png';
 const Titlebar = () => (
   <div>
     <img src={shoppieslogo} alt="shoppieslogo" />
-    <h6>Movie awards for entrepreneurs</h6>
+    {/* <img src={logo} className="App-logo" alt="logo" /> */}
+    <h5>movie awards for entrepreneurs</h5>
   </div>
 )
 

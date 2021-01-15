@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 //import { SearchBox } from './index'
+import Globe from './icon-test'
 
 class Search extends Component {
   constructor(props) {
@@ -29,34 +30,34 @@ class Search extends Component {
   }
 
   render() {
-
     return (
+      // <div className="form">
+      <div >
+        <form
+          className="search-bar"
+          onSubmit={this.handleSearchSubmit}>
 
-      <div>
+          <input
+            className="search-bar"
+            name="title"
+            type="text"
+            value={this.state.title}
+            placeholder="e.g. pirates"
+            onChange={this.handleChange}
+          />
+          <button
+            className="search-bar"
+            type="submit"
+            onSubmit={this.handleSearchSubmit}>
+            {/* {' '}
+                submit{' '} */}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
 
-        <div className="form">
-          <form onSubmit={this.handleSearchSubmit}>
-            <div>
-              <input
-                name="title"
-                type="text"
-                value={this.state.title}
-                placeholder="e.g. Rambo"
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <div>
-              <button type="submit" onSubmit={this.handleSearchSubmit}>
-                {' '}
-                submit{' '}
-              </button>
-            </div>
-          </form>
-        </div>
-
+        </form>
       </div>
-
     )
   }
 }

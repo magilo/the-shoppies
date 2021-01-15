@@ -4,7 +4,7 @@ import React from 'react'
 function Done(props){
   if (props.isDone === true){
     return (
-      <h4>You're done! Thanks for participating</h4>
+      <h4 id="done">☆☆☆ You're done! Thanks for participating. ☆☆☆</h4>
     )
   } else {
     return (
@@ -15,3 +15,5 @@ function Done(props){
 }
 
 export default Done
+
+
