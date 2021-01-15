@@ -43,10 +43,13 @@ class Nominees extends Component {
           <ul>{listItems}</ul>
         </div>
       );
-    } else {
+    }
+    else {
       return (
-        <h4>nominees go here</h4>
+        <div></div>
       )
+      // <h4>nominees go here</h4>
+
     }
 
   }
