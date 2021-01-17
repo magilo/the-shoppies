@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-//import { SearchBox } from './index'
-import Globe from './icon-test'
 
 class Search extends Component {
   constructor(props) {
@@ -21,7 +19,6 @@ class Search extends Component {
   }
 
   handleSearchSubmit(event) {
-    //alert('A title was submitted: ' + this.state.title);
     this.props.searchSubmitCB(this.state.title)
     event.preventDefault()
     this.setState({
