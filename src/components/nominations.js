@@ -69,7 +69,11 @@ class Nominations extends Component {
 
   componentDidMount() {
     let nominees = JSON.parse(localStorage.getItem('nominees'))
-    this.setState({ nominees })
+    if (nominees === null) {
+      this.setState(({ nominees: [] }))
+    } else {
+      this.setState({ nominees })
+    }
   }
 
   render() {
