@@ -11,7 +11,6 @@ function Done(props){
       <h4>select up to five nominees</h4>
     )
   }
-
 }
 
 export default Done

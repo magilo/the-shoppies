@@ -10,7 +10,6 @@ class Nominees extends Component {
   }
 
   handleDeleteNominee(event) {
-    //alert(event.target.value)
     event.preventDefault()
     this.props.deleteNomineeCB(event.target.value) //value is imdbID
   }
@@ -26,7 +25,6 @@ class Nominees extends Component {
 
   render() {
     const { nominees } = this.state
-    //console.log('nominees render', nominees)
     if (Array.isArray(nominees) && nominees.length > 0) {
       const listItems = nominees.map((n) =>
         <div className="movie" key={n.imdbID}>
@@ -51,8 +49,6 @@ class Nominees extends Component {
       return (
         <div className="nominee-list"></div>
       )
-      // <h4>nominees go here</h4>
-
     }
 
   }

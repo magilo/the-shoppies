@@ -28,9 +28,3 @@ function App() {
 
 export default App;
 
-/*
-<p>
-          Edit <code>src/App.js</code> and save to reload.
-          NEW TEST
-        </p>
-*/
