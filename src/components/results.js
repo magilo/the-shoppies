@@ -14,9 +14,7 @@ class Results extends Component {
   }
 
   handleResultSubmit(movieData, event) {
-    //alert(event.target.value)
     event.preventDefault()
-    //console.log('moviedata', movieData)
     this.props.resultSubmitCB(movieData)
 
   }
@@ -41,7 +39,6 @@ class Results extends Component {
   }
 
   render() {
-    console.log('render in results', this.props)
     const { title, nominees } = this.state
     const allResults = this.state.results //array
     const error = this.state.error

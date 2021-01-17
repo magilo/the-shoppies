@@ -11,7 +11,6 @@ class Nominations extends Component {
       title: "",
       results: "",
       nominees: [],
-      data: "",
       searchError: ""
     }
     this.handleSearchSubmitCB = this.handleSearchSubmitCB.bind(this)
@@ -23,7 +22,6 @@ class Nominations extends Component {
   handleSearchSubmitCB = (childData) => {
     const wrapper = async () => {
       const apiData = await getSearchResults(childData)
-      //console.log('apiData', apiData)
       if (apiData.Response === 'False') {
         this.setState({
           results: "",
@@ -41,7 +39,7 @@ class Nominations extends Component {
   }
 
   //setState is an async func - setState(updater, [callback])
-  //console log inisde nested setState to get updated state
+  //localStorage set inisde nested setState to get updated state
   handleResultSubmitCB = (childNominee) => {
     this.setState({ nominees: this.state.nominees }, function () {
       let nomineesLen = this.state.nominees.length
@@ -64,18 +62,13 @@ class Nominations extends Component {
   }
 
   handleDeleteNomineeCB = (childID) => {
-    //console.log('delete n childData', childData)
-    //console.log('this.state.nominees', this.state.nominees)
     const newList = this.state.nominees.filter((item) => item.imdbID !== childID)
     this.setState({ nominees: newList })
     localStorage.setItem('nominees', JSON.stringify(newList))
-    //console.log('localStorage', localStorage)
   }
 
   componentDidMount() {
     let nominees = JSON.parse(localStorage.getItem('nominees'))
-
-    //console.log('didMount', nominees)
     this.setState({ nominees })
   }
 
