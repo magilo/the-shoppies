@@ -4,7 +4,7 @@ import { Titlebar, Nominations } from './components'
 function App() {
   return (
     <div className="App">
-      <body className="App-body">
+      <div className="App-body">
         <header className="App-header">
           <Titlebar />
         </header>
@@ -21,7 +21,7 @@ function App() {
             github
         </a>
         </footer>
-      </body>
+      </div>
     </div>
   );
 }

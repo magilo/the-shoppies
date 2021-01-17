@@ -41,21 +41,26 @@ class Nominations extends Component {
   }
 
   //setState is an async func - setState(updater, [callback])
+  //console log inisde nested setState to get updated state
   handleResultSubmitCB = (childNominee) => {
     this.setState({ nominees: this.state.nominees }, function () {
       let nomineesLen = this.state.nominees.length
       if (nomineesLen === 0) {
         this.setState({ nominees: [...this.state.nominees, childNominee] }, () => {
-          //console.log('nominees === 0', this.state.nominees);
+          //console.log('nominees === 0', this.state);
+          localStorage.setItem('nominees', JSON.stringify(this.state.nominees));
         });
       } else if (nomineesLen > 0 && nomineesLen < 5) {
         this.setState({ nominees: [...this.state.nominees, childNominee] }, () => {
-          //console.log('nomi <= 5', this.state.nominees)
+          //console.log('nomi <= 5', this.state)
+          localStorage.setItem('nominees', JSON.stringify(this.state.nominees));
         });
       } else {
         alert('you have already selected five(5) nominees');
       }
+
     });
+
   }
 
   handleDeleteNomineeCB = (childID) => {
@@ -63,10 +68,16 @@ class Nominations extends Component {
     //console.log('this.state.nominees', this.state.nominees)
     const newList = this.state.nominees.filter((item) => item.imdbID !== childID)
     this.setState({ nominees: newList })
+    localStorage.setItem('nominees', JSON.stringify(newList))
+    //console.log('localStorage', localStorage)
   }
 
+  componentDidMount() {
+    let nominees = JSON.parse(localStorage.getItem('nominees'))
 
-
+    //console.log('didMount', nominees)
+    this.setState({ nominees })
+  }
 
   render() {
     const { title, results, nominees, searchError } = this.state
