@@ -15,9 +15,7 @@ This is a project submission for Shopify's challenge to create an app that manag
 <br />
 
 ## Screenshots
-<img src="https://raw.githubusercontent.com/magilo/the-shoppies/main/public/nominations-module.png" width="350">
-
-<img src="https://raw.githubusercontent.com/magilo/the-shoppies/main/public/results-module.png" width="350">
+<img src="https://raw.githubusercontent.com/magilo/the-shoppies/main/public/nominations-module.png" width="350"> <img src="https://raw.githubusercontent.com/magilo/the-shoppies/main/public/results-module.png" width="350">
 
 <br />
 <br />
