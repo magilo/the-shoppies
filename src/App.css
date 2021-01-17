@@ -120,7 +120,7 @@ footer{
 }
 
 .App-link {
-  font-size: calc(6px + 2vmin);
+  font-size: calc(8px + 2vmin);
   background-image: linear-gradient(to left,
    #ffe600, #55efff, #ff71de, #ffe600,  #55efff, #ff71de
   );
